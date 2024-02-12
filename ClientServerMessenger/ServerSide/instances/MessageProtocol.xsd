@@ -1,0 +1,29 @@
+<?xml version = "1.0"?>
+
+<xs:schema
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:po="http://openuri.org/easypo"
+        targetNamespace="http://openuri.org/easypo"
+        elementFormDefault="qualified">
+
+    <xs:element name = "message">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name = "header" type = "po:header"/>
+                <xs:element name = "body" type = "po:body"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name = "header">
+        <xs:attribute name = "time" type = "xs:dateTime"/>
+    </xs:complexType>
+
+    <xs:complexType name = "body">
+        <xs:sequence>
+            <xs:element name = "user" type = "xs:string"/>
+            <xs:element name = "text" type = "xs:string"/>
+            <xs:element name = "init_name" type = "xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
